@@ -1,0 +1,26 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the GROUP X4 chat app!</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <p>
+        Names | RegNo | Date Of Birth | Year of Student <br>
+        {% for student in student_number %}
+        {{ student.names}} 
+        {{ student.regno}}
+        {{ student.student_number}}
+        {{student.DOB }}
+        {{ student.year_of_study }} </p>
+
+        {% endfor %}
+
+
+
+    {% else %}
+        <h2>Subcribe or Login if you'd like to take part</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
